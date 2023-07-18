@@ -9,19 +9,30 @@ import SwiftUI
 
 struct RegisterView: View {
     @State private var name = ""
+    @State private var isInputValid = false
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
-        VStack {
-            TextField("Enter your name...", text: $name)
-                .multilineTextAlignment(.center)
-            Button(action: registerUser) {
-                HStack {
-                    Image(systemName: "checkmark.circle")
-                    Text("OK")
+        HStack(alignment: .top) {
+            VStack {
+                TextField("Enter your name...", text: $name)
+                    .multilineTextAlignment(.center)
+                    .onChange(of: name) { isInputValid = $0.count >= 3 }
+                    
+                Button(action: registerUser) {
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                        Text("OK")
+                    }
                 }
+                .disabled(!isInputValid)
             }
+            
+            Text(name.count.formatted())
+                .frame(width: 40)
+                .foregroundColor(isInputValid ? .black : .red)
         }
+        .padding()
     }
     
     private func registerUser() {
