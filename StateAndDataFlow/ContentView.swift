@@ -31,6 +31,7 @@ struct ContentView: View {
                 text: "Log Out",
                 color: .blue
             )
+            Spacer()
         }
     }
 }
