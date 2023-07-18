@@ -30,7 +30,7 @@ struct RegisterView: View {
             
             Text(name.count.formatted())
                 .frame(width: 40)
-                .foregroundColor(isInputValid ? .primary : .red)
+                .foregroundColor(isInputValid ? .green : .red)
         }
         .padding()
     }
