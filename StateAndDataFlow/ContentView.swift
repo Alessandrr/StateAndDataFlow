@@ -20,8 +20,17 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .padding(.top, 100)
             Spacer()
-            ButtonView(timer: timer)
+            ButtonView(
+                action: timer.startTimer,
+                text: timer.buttonTitle,
+                color: .red
+            )
             Spacer()
+            ButtonView(
+                action: userManager.logOut,
+                text: "Log Out",
+                color: .blue
+            )
         }
     }
 }
@@ -30,21 +39,23 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(UserManager())
-    } 
+    }
 }
 
 struct ButtonView: View {
-    @ObservedObject var timer: TimeCounter
+    var action: () -> Void
+    var text: String
+    var color: Color
     
     var body: some View {
-        Button(action: timer.startTimer) {
-            Text(timer.buttonTitle)
+        Button(action: action) {
+            Text(text)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
         }
         .frame(width: 200, height: 60)
-        .background(.red)
+        .background(color)
         .cornerRadius(20)
         .overlay {
             RoundedRectangle(cornerRadius: 20)

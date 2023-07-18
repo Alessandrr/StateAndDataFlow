@@ -5,9 +5,15 @@
 //  Created by Aleksandr Mamlygo on 17.07.23.
 //
 
-import Foundation
+import SwiftUI
+
 
 class UserManager: ObservableObject {
-    @Published var isRegistered = false
-    var name = ""
+    @AppStorage("username") var name = ""
+    
+    func logOut() {
+        withAnimation {
+            name = ""
+        }
+    }
 }

@@ -30,7 +30,7 @@ struct RegisterView: View {
             
             Text(name.count.formatted())
                 .frame(width: 40)
-                .foregroundColor(isInputValid ? .black : .red)
+                .foregroundColor(isInputValid ? .primary : .red)
         }
         .padding()
     }
@@ -38,7 +38,6 @@ struct RegisterView: View {
     private func registerUser() {
         if !name.isEmpty {
             userManager.name = name
-            userManager.isRegistered.toggle()
         }
     }
 }
