@@ -15,6 +15,7 @@
 		1FD9D5DC2A65B39400ED2585 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9D5DB2A65B39400ED2585 /* RegisterView.swift */; };
 		1FD9D5DE2A65B45C00ED2585 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9D5DD2A65B45C00ED2585 /* UserManager.swift */; };
 		1FD9D5E02A65B6F200ED2585 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9D5DF2A65B6F200ED2585 /* StarterView.swift */; };
+		1FD9D5E22A67BE2100ED2585 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9D5E12A67BE2100ED2585 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		1FD9D5DB2A65B39400ED2585 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1FD9D5DD2A65B45C00ED2585 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		1FD9D5DF2A65B6F200ED2585 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		1FD9D5E12A67BE2100ED2585 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		1FD9D5CA2A65A4D500ED2585 /* StateAndDataFlow */ = {
 			isa = PBXGroup;
 			children = (
+				1FD9D5E12A67BE2100ED2585 /* DataManager.swift */,
 				1FD9D5DD2A65B45C00ED2585 /* UserManager.swift */,
 				1FD9D5DF2A65B6F200ED2585 /* StarterView.swift */,
 				1FD9D5D92A65ABC600ED2585 /* TimeCounter.swift */,
@@ -152,6 +155,7 @@
 				1FD9D5DA2A65ABC600ED2585 /* TimeCounter.swift in Sources */,
 				1FD9D5DE2A65B45C00ED2585 /* UserManager.swift in Sources */,
 				1FD9D5E02A65B6F200ED2585 /* StarterView.swift in Sources */,
+				1FD9D5E22A67BE2100ED2585 /* DataManager.swift in Sources */,
 				1FD9D5DC2A65B39400ED2585 /* RegisterView.swift in Sources */,
 				1FD9D5CE2A65A4D500ED2585 /* ContentView.swift in Sources */,
 				1FD9D5CC2A65A4D500ED2585 /* StateAndDataFlowApp.swift in Sources */,

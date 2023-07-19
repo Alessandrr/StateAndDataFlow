@@ -8,18 +8,22 @@
 import SwiftUI
 
 
-class UserManager: ObservableObject {
-    @AppStorage("username") var name = ""
-    @AppStorage("isRegistered") var isRegistered = false
+final class UserManager: ObservableObject {
+    
+    @Published var user = User()
     
     var isInputValid: Bool {
-        name.count >= 3
+        user.name.count >= 3
     }
     
-    func logOut() {
-        withAnimation {
-            isRegistered = false
-            name = ""
-        }
+    init() {}
+    
+    init(user: User) {
+        self.user = user
     }
+}
+
+struct User: Codable {
+    var name = ""
+    var isRegistered = false
 }
