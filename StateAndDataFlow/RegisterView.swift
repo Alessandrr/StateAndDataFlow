@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var name = ""
-    @State private var isInputValid = false
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
         HStack(alignment: .top) {
             VStack {
-                TextField("Enter your name...", text: $name)
+                TextField("Enter your name...", text: $userManager.name)
                     .multilineTextAlignment(.center)
-                    .onChange(of: name) { isInputValid = $0.count >= 3 }
                     
                 Button(action: registerUser) {
                     HStack {
@@ -25,19 +22,19 @@ struct RegisterView: View {
                         Text("OK")
                     }
                 }
-                .disabled(!isInputValid)
+                .disabled(!userManager.isInputValid)
             }
             
-            Text(name.count.formatted())
+            Text(userManager.name.count.formatted())
                 .frame(width: 40)
-                .foregroundColor(isInputValid ? .green : .red)
+                .foregroundColor(userManager.isInputValid ? .green : .red)
         }
         .padding()
     }
     
     private func registerUser() {
-        if !name.isEmpty {
-            userManager.name = name
+        if !userManager.name.isEmpty {
+            userManager.isRegistered = true
         }
     }
 }
@@ -45,5 +42,6 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .environmentObject(UserManager())
     }
 }
